@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using OWML.Common;
 using OWML.ModHelper;
 using System.Reflection;
 
@@ -18,7 +17,16 @@ public class Mod : ModBehaviour
 
 	private void Start()
 	{
-		var sound = ModHelper.Assets.GetAudio("sound.mp3");
-		// Locator.GetAudioManager().
+		return;
+		Locator.GetAudioManager()._audioLibraryDict[(int)AudioType.MovementIceLSiding] =
+			new AudioLibrary.AudioEntry(AudioType.MovementIceLSiding, new[] { ModHelper.Assets.GetAudio("sound.mp3") });
+	}
+
+	[HarmonyPrefix, HarmonyPatch(typeof(PlayerCharacterController), nameof(PlayerCharacterController.IsSlidingOnIce))]
+	private static bool PlayerCharacterController_IsSlidingOnIce(PlayerCharacterController __instance, out bool __result)
+	{
+		__result = __instance.IsGrounded() && __instance._groundCollider.material.dynamicFriction == 0f;
+		// __result = __instance.IsGrounded() && __instance._groundSurface == SurfaceType.Ice && __instance._groundCollider.material.dynamicFriction == 0f;
+		return false;
 	}
 }
