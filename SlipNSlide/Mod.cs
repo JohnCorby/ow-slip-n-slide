@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace SlipNSlide;
 
-[HarmonyPatch]
 public class Mod : ModBehaviour
 {
 	private void Start()
