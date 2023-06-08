@@ -47,16 +47,14 @@ public class Mod : ModBehaviour
 				audioTable[(int)AudioType.ShipImpact_HeavyDamage] = new AudioLibrary.AudioEntry(AudioType.ShipImpact_HeavyDamage, new[] { bonk });
 
 				audioTable[(int)AudioType.NomaiRuinsBaseTrack] = new AudioLibrary.AudioEntry(AudioType.NomaiRuinsBaseTrack, new[] { music });
-				audioTable[(int)AudioType.NomaiRuinsOverlayTracks] = new AudioLibrary.AudioEntry(AudioType.NomaiRuinsOverlayTracks, new[] { music });
-				audioTable[(int)AudioType.NomaiRuinsBaseScaryTrack] = new AudioLibrary.AudioEntry(AudioType.NomaiRuinsBaseScaryTrack, new[] { music });
+				audioTable[(int)AudioType.DreamRuinsBaseTrack] = new AudioLibrary.AudioEntry(AudioType.DreamRuinsBaseTrack, new[] { music });
 				audioTable[(int)AudioType.HT_City] = new AudioLibrary.AudioEntry(AudioType.HT_City, new[] { music });
 				audioTable[(int)AudioType.BH_Observatory] = new AudioLibrary.AudioEntry(AudioType.BH_Observatory, new[] { music });
 				audioTable[(int)AudioType.TimeLoopDevice_Ambient] = new AudioLibrary.AudioEntry(AudioType.TimeLoopDevice_Ambient, new[] { music });
 				audioTable[(int)AudioType.SunStation] = new AudioLibrary.AudioEntry(AudioType.SunStation, new[] { music });
 				audioTable[(int)AudioType.SadNomaiTheme] = new AudioLibrary.AudioEntry(AudioType.SadNomaiTheme, new[] { music2 });
-				audioTable[(int)AudioType.DreamRuinsBaseTrack] = new AudioLibrary.AudioEntry(AudioType.DreamRuinsBaseTrack, new[] { music });
-				audioTable[(int)AudioType.DreamRuinsOverlayTracks] = new AudioLibrary.AudioEntry(AudioType.DreamRuinsOverlayTracks, new[] { music });
-				
+				audioTable[(int)AudioType.Prisoner_Catharsis] = new AudioLibrary.AudioEntry(AudioType.Prisoner_Catharsis, new[] { music2 });
+
 				// fuck you
 				foreach (var owAudioSource in Resources.FindObjectsOfTypeAll<OWAudioSource>())
 				{
