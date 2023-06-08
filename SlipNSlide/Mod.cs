@@ -16,6 +16,7 @@ public class Mod : ModBehaviour
 			var slide2 = ModHelper.Assets.GetAudio("slide2.mp3");
 			var bonk = ModHelper.Assets.GetAudio("bonk.mp3");
 			var music = ModHelper.Assets.GetAudio("music.mp3");
+			var music2 = ModHelper.Assets.GetAudio("music2.mp3");
 
 			ModHelper.Events.Unity.FireInNUpdates(() =>
 			{
@@ -46,7 +47,22 @@ public class Mod : ModBehaviour
 				audioTable[(int)AudioType.ShipImpact_HeavyDamage] = new AudioLibrary.AudioEntry(AudioType.ShipImpact_HeavyDamage, new[] { bonk });
 
 				audioTable[(int)AudioType.NomaiRuinsBaseTrack] = new AudioLibrary.AudioEntry(AudioType.NomaiRuinsBaseTrack, new[] { music });
+				audioTable[(int)AudioType.NomaiRuinsOverlayTracks] = new AudioLibrary.AudioEntry(AudioType.NomaiRuinsOverlayTracks, new[] { music });
+				audioTable[(int)AudioType.NomaiRuinsBaseScaryTrack] = new AudioLibrary.AudioEntry(AudioType.NomaiRuinsBaseScaryTrack, new[] { music });
+				audioTable[(int)AudioType.HT_City] = new AudioLibrary.AudioEntry(AudioType.HT_City, new[] { music });
+				audioTable[(int)AudioType.BH_Observatory] = new AudioLibrary.AudioEntry(AudioType.BH_Observatory, new[] { music });
+				audioTable[(int)AudioType.TimeLoopDevice_Ambient] = new AudioLibrary.AudioEntry(AudioType.TimeLoopDevice_Ambient, new[] { music });
+				audioTable[(int)AudioType.SunStation] = new AudioLibrary.AudioEntry(AudioType.SunStation, new[] { music });
+				audioTable[(int)AudioType.SadNomaiTheme] = new AudioLibrary.AudioEntry(AudioType.SadNomaiTheme, new[] { music2 });
 				audioTable[(int)AudioType.DreamRuinsBaseTrack] = new AudioLibrary.AudioEntry(AudioType.DreamRuinsBaseTrack, new[] { music });
+				audioTable[(int)AudioType.DreamRuinsOverlayTracks] = new AudioLibrary.AudioEntry(AudioType.DreamRuinsOverlayTracks, new[] { music });
+				
+				// fuck you
+				foreach (var owAudioSource in Resources.FindObjectsOfTypeAll<OWAudioSource>())
+				{
+					if (owAudioSource._clipSelectionOnPlay == OWAudioSource.ClipSelectionOnPlay.MANUAL)
+						owAudioSource._clipSelectionOnPlay = OWAudioSource.ClipSelectionOnPlay.RANDOM;
+				}
 
 				ModHelper.Console.WriteLine("everything is ice");
 			}, 10);
