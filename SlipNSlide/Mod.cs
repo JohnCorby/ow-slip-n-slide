@@ -67,6 +67,11 @@ public class Mod : ModBehaviour
 				audioTable[(int)AudioType.SunStation] = new AudioLibrary.AudioEntry(AudioType.SunStation, new[] { music });
 				audioTable[(int)AudioType.SadNomaiTheme] = new AudioLibrary.AudioEntry(AudioType.SadNomaiTheme, new[] { music2 });
 				audioTable[(int)AudioType.Prisoner_Catharsis] = new AudioLibrary.AudioEntry(AudioType.Prisoner_Catharsis, new[] { music2 });
+				audioTable[(int)AudioType.GhostSequence_Dread] = new AudioLibrary.AudioEntry(AudioType.GhostSequence_Dread, new[] { music });
+				audioTable[(int)AudioType.GhostSequence_Fear] = new AudioLibrary.AudioEntry(AudioType.GhostSequence_Fear, new[] { music });
+				audioTable[(int)AudioType.GhostSequence_Suspense] = new AudioLibrary.AudioEntry(AudioType.GhostSequence_Suspense, new[] { music });
+				audioTable[(int)AudioType.GhostSequence_ReducedFrights] = new AudioLibrary.AudioEntry(AudioType.GhostSequence_ReducedFrights, new[] { music });
+				audioTable[(int)AudioType.SecretLibrary] = new AudioLibrary.AudioEntry(AudioType.SecretLibrary, new[] { music });
 
 				// fuck you
 				foreach (var owAudioSource in Resources.FindObjectsOfTypeAll<OWAudioSource>())
