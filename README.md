@@ -3,3 +3,5 @@
 
 Makes everything very slippery.
 Also adds a bunch of silly sounds and songs.
+
+Open to PRs for more sounds and goofy silly features.
