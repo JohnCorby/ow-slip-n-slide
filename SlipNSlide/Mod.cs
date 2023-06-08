@@ -46,6 +46,7 @@ public class Mod : ModBehaviour
 				audioTable[(int)AudioType.ShipImpact_HeavyDamage] = new AudioLibrary.AudioEntry(AudioType.ShipImpact_HeavyDamage, new[] { bonk });
 
 				audioTable[(int)AudioType.NomaiRuinsBaseTrack] = new AudioLibrary.AudioEntry(AudioType.NomaiRuinsBaseTrack, new[] { music });
+				audioTable[(int)AudioType.DreamRuinsBaseTrack] = new AudioLibrary.AudioEntry(AudioType.DreamRuinsBaseTrack, new[] { music });
 
 				ModHelper.Console.WriteLine("everything is ice");
 			}, 10);
