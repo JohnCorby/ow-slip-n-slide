@@ -71,7 +71,7 @@ public class Mod : ModBehaviour
 				audioTable[(int)AudioType.GhostSequence_Suspense] = new AudioLibrary.AudioEntry(AudioType.GhostSequence_Suspense, new[] { music });
 				audioTable[(int)AudioType.GhostSequence_ReducedFrights] = new AudioLibrary.AudioEntry(AudioType.GhostSequence_ReducedFrights, new[] { music });
 
-				// fuck you
+				// some of the music is manual (for some reason), so make it not so clip selection works properly. really hacky and probably breaks some audio somewhere
 				foreach (var owAudioSource in Resources.FindObjectsOfTypeAll<OWAudioSource>())
 				{
 					if (owAudioSource._clipSelectionOnPlay == OWAudioSource.ClipSelectionOnPlay.MANUAL)
