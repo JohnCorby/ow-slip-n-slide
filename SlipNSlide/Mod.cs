@@ -9,14 +9,14 @@ public class Mod : ModBehaviour
 {
 	private void Start()
 	{
+		var slide = ModHelper.Assets.GetAudio("slide.mp3");
+		var slide2 = ModHelper.Assets.GetAudio("slide2.mp3");
+		var bonk = ModHelper.Assets.GetAudio("bonk.mp3");
+		var music = ModHelper.Assets.GetAudio("music.mp3");
+		var music2 = ModHelper.Assets.GetAudio("music2.mp3");
+
 		LoadManager.OnCompleteSceneLoad += (_, _) =>
 		{
-			var slide = ModHelper.Assets.GetAudio("slide.mp3");
-			var slide2 = ModHelper.Assets.GetAudio("slide2.mp3");
-			var bonk = ModHelper.Assets.GetAudio("bonk.mp3");
-			var music = ModHelper.Assets.GetAudio("music.mp3");
-			var music2 = ModHelper.Assets.GetAudio("music2.mp3");
-
 			ModHelper.Events.Unity.FireInNUpdates(() =>
 			{
 				// friction
